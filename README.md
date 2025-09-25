@@ -25,6 +25,18 @@ ArtSCII is a Python project that converts images into ASCII art. It takes an inp
 - [x] Output to file option
 - [ ] Web app interface (coming soon)
 
+## Project Structure
+
+```
+ArtSCII/
+├── ascii_core.py      # Core ASCII conversion logic
+├── ascii_art.py       # CLI interface
+├── requirements.txt   # Dependencies
+├── README.md          # Documentation
+├── Examples/          # Sample images and outputs for README examples
+└── Output/            # Default output folder (ignored in git)
+```
+
 ## CLI Usage
 
 ```bash
