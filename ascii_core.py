@@ -26,6 +26,30 @@ def _luminance(r: int, g: int, b: int) -> int:
 
 # Pick the correct from the ramp based on brightness
 def _pick_char(lum: int, ramp: str) -> str:
-    idx = int((lum / 255) (len(ramp) - 1 )) # scale 0-255 to ramp length
+    idx = int((lum / 255) * (len(ramp) - 1 )) # scale 0-255 to ramp length
     return ramp[idx] # return the character at that index
+
+# Convert the image to ASCII (returns a list of strings, one per line)
+def to_ascii(img: Image.Image, width: int = 100, invert: bool = False, dense: bool = False) -> List[str]:
+    # Choose which ramp to use
+    ramp = RAMP_DENSE if dense else RAMP_SIMPLE
+    if invert:
+        ramp = ramp[::-1] # reverse the ramp for inversion (flipped light/dark)
+    
+    # Work out target size and create a resized greyscale version of the image
+    W, H = _target_size(img, width)
+    grey = img.convert("L").resize((W, H), Image.BICUBIC)  # convert to greyscale and resize
+    px = grey.load()  # load pixel data
+
+    # Generate ASCII art line by line
+    lines: List[str] = []
+    for y in range(H):
+        row_chars = []
+        for x in range(W):
+            lum = px[x, y]  # get luminance (0-255)
+            row_chars.append(_pick_char(lum, ramp))  # pick corresponding ASCII character
+        lines.append("".join(row_chars))  # join characters into a string for the line
+    return lines  # return the list of lines representing the ASCII art
+
+
 
