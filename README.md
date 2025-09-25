@@ -1,6 +1,13 @@
 # ArtSCII 🎨➡️🔡
 
+
 ArtSCII is a Python project that converts images into ASCII art. It takes an input image and transforms it into a text representation using ASCII characters, allowing you to visualize images in a unique and artistic way using only text.
+
+## Examples
+
+| Original Image | ASCII Output |
+|:-------------:|:-----------:|
+| <img src="Examples/CatExample.JPG" width="200"/> | <img src="Examples/CatExampleASCII.png" width="200"/> |
 
 ## Project Goals
 
