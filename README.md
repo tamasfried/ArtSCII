@@ -12,7 +12,6 @@ The goal is to build both a **command-line tool** and a simple **web app** where
   - Width of the output
   - Dense or simple character sets
   - Inverted brightness mapping
-  - Color output (using ANSI codes in the terminal)
 - Make a web interface (using Streamlit) so it can be used easily without the terminal.
 
 ---
