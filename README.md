@@ -1,5 +1,7 @@
 # ArtSCII 🎨➡️🔡
 
+![Python](https://img.shields.io/badge/python-3.12+-blue?logo=python&logoColor=white) ![Last Commit](https://img.shields.io/github/last-commit/TamasFried/ArtSCII)
+
 
 ArtSCII is a Python project that converts images into ASCII art. It takes an input image and transforms it into a text representation using ASCII characters, allowing you to visualize images in a unique and artistic way using only text.
 
