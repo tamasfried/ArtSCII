@@ -9,9 +9,6 @@ import shutil                   # for terminal size detection
 
 # Set up command line argument parsing
 def _build_parser() -> argparse.ArgumentParser:
-    default_output_dir = Path.cwd() / "Output"
-    default_output_dir.mkdir(exist_ok=True)
-    default_output_path = default_output_dir / "ascii_art.txt"
     p = argparse.ArgumentParser(
         prog="ArtSCII",
         description="Convert an image to greyscale ASCII art."
@@ -24,7 +21,7 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument("image", help="Path to the input image (jpg, png, etc.)") 
     p.add_argument("--invert", action="store_true", help="Invert brightness mapping (better for dark terminals)")
     p.add_argument("--dense", action="store_true", help="Use a denser character set for more detail")
-    p.add_argument("--output", "-o", default=str(default_output_path), help=f"Save ASCII to a text file instead of printing (default: {default_output_path})")
+    p.add_argument("--output", "-o", default=None, help="Save ASCII to a text file instead of printing")
     return p
 
 def main() -> None:
@@ -41,7 +38,7 @@ def main() -> None:
         img = Image.open(img_path)
         img = ImageOps.exif_transpose(img)  # correct orientation using EXIF data
     except Exception as e:
-        parser.error(f"Failed to open image '{e}'.")
+        parser.error(f"Failed to open image: {e}")
     
     # Convert the image to ASCII art with core function
     lines = to_ascii(
@@ -58,7 +55,7 @@ def main() -> None:
         try: 
             out_path.write_text("\n".join(lines), encoding = "utf-8")
         except Exception as e:
-            parser.error(f"Failed to write to output file '{e}'.")
+            parser.error(f"Failed to write to output file: {e}")
         else:
             print(f"Saved ASCII art to '{out_path}'.")
     else:

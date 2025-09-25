@@ -1,55 +1,38 @@
 # ArtSCII 🎨➡️🔡
 
-**ArtSCII** is a Python project that converts images into ASCII art.  
-The goal is to build both a **command-line tool** and a simple **web app** where users can upload an image and see it transformed into ASCII characters.
-
----
+ArtSCII is a Python project that converts images into ASCII art. It takes an input image and transforms it into a text representation using ASCII characters, allowing you to visualize images in a unique and artistic way using only text.
 
 ## Project Goals
-- Convert images to ASCII using a small set of characters.
-- Preserve the aspect ratio so the ASCII "image" looks correct.
-- Provide options like:
-  - Width of the output
-  - Dense or simple character sets
-  - Inverted brightness mapping
-- Make a web interface (using Streamlit) so it can be used easily without the terminal.
 
----
+- Convert images to ASCII art with customizable width and character sets.
+- Provide options to invert brightness and adjust character aspect ratio.
+- Allow saving the ASCII art output to a text file.
+- Create a simple and user-friendly command-line interface (CLI).
 
 ## Current Status
-This is a work in progress.  
-- [x] Set up project structure and environment  
-- [x] Core conversion logic  
-- [x] Command-line interface  
-- [ ] Web app  
 
----
+- [x] Basic image to ASCII conversion
+- [x] Width adjustment
+- [x] Brightness inversion
+- [x] Dense character set option
+- [x] Character aspect ratio adjustment
+- [x] Output to file option
+- [ ] Web app interface (coming soon)
 
-## Command-Line Interface (CLI)
+## CLI Usage
 
-You can run the ArtSCII CLI tool directly from the terminal to convert images into ASCII art.
-
-### Basic Usage
 ```bash
-python artSCII.py path/to/image.jpg
+python artSCII.py path/to/image.jpg --width 100 --invert --dense --char-aspect 0.6 --output output.txt
 ```
-This will convert the image and display the ASCII art in the terminal.
-
-### Saving Output
-By default, the ASCII art output is saved to `./Output/ascii_art.txt`. You can specify a different output path if you want.
 
 ### Optional Flags
-- `--width`: Set the width of the ASCII output (default uses your terminal width)
-- `--invert`: Invert brightness mapping
-- `--dense`: Use a denser character set for more detail
-- `--char-aspect`: Adjust the character aspect ratio for better proportions
-- `--output`: Specify a custom output file path
 
-### Example Command
-```bash
-python artSCII.py path/to/image.jpg --width 100 --invert --dense --char-aspect 0.5 --output ./Output/my_ascii_art.txt
-```
+- `--width` or `-w`: Specify the width of the ASCII output. Defaults to terminal width if not set.
+- `--invert` or `-i`: Invert brightness mapping.
+- `--dense` or `-d`: Use a denser character set for more detail.
+- `--char-aspect` or `-c`: Adjust the character aspect ratio for better proportions (default 0.5).
+- `--output` or `-o`: Save ASCII art to a text file instead of printing to the console.
 
----
+## Note
 
-The web app implementation (using Streamlit) will come next to provide an easy-to-use graphical interface.
+A web app version of ArtSCII is in development and will be released soon!
