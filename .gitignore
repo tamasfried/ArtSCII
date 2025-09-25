@@ -1,4 +1,6 @@
 /.vscode/
 /__pycache__/
-/Output/
+/outputs/
 .DS_Store/
+/src/__pycache__/
+/src/Output/

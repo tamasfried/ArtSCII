@@ -2,14 +2,13 @@
 
 ![Python](https://img.shields.io/badge/python-3.12+-blue?logo=python&logoColor=white) ![Last Commit](https://img.shields.io/github/last-commit/TamasFried/ArtSCII)
 
-
 ArtSCII is a Python project that converts images into ASCII art. It takes an input image and transforms it into a text representation using ASCII characters, allowing you to visualize images in a unique and artistic way using only text.
 
 ## Examples
 
 | Original Image | ASCII Output |
 |:-------------:|:-----------:|
-| <img src="Examples/CatExample.JPG" width="400"/> | <img src="Examples/CatExampleASCII.png" width="400"/> |
+| <img src="examples/CatExample.JPG" width="400"/> | <img src="examples/CatExampleASCII.png" width="400"/> |
 
 ## Project Goals
 
@@ -31,29 +30,30 @@ ArtSCII is a Python project that converts images into ASCII art. It takes an inp
 
 ```
 ArtSCII/
-├── ascii_core.py      # Core ASCII conversion logic
-├── ascii_art.py       # CLI interface
-├── requirements.txt   # Dependencies
-├── README.md          # Documentation
-├── Examples/          # Sample images and outputs for README examples
-└── Output/            # Default output folder (ignored in git)
+├── README.md              # Project overview and usage instructions
+├── requirements.txt       # Python dependencies for the CLI
+├── examples/              # Sample source images and rendered ASCII screenshots
+├── outputs/               # Generated ASCII text files (ignored by git)
+└── src/                   # Application source code
+    ├── ascii_art.py       # Command-line interface script
+    └── ascii_core.py      # Core ASCII art conversion helpers
 ```
 
 ## CLI Usage
 
+Run the CLI from the repository root:
+
 ```bash
-python artSCII.py path/to/image.jpg --width 100 --invert --dense --output output.txt
+python src/ascii_art.py path/to/image.jpg --width 100 --invert --dense --output outputs/output.txt
 ```
 
 ### Basic Usage
 
 ```bash
-python artSCII.py path/to/image.jpg
+python src/ascii_art.py path/to/image.jpg
 ```
 
-### Advanced Usage
-
-#### Optional Flags
+### Optional Flags
 
 - `--width` or `-w`: Specify the width of the ASCII output. Defaults to terminal width if not set.
 - `--invert` or `-i`: Invert brightness mapping.
@@ -61,10 +61,8 @@ python artSCII.py path/to/image.jpg
 - `--output` or `-o`: Save ASCII art to a text file instead of printing to the console.
 
 ```bash
-python artSCII.py path/to/image.jpg --width 100 --invert --dense --output output.txt
+python src/ascii_art.py path/to/image.jpg --width 100 --invert --dense --output outputs/output.txt
 ```
-
-
 
 ## Note
 
