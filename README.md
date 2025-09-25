@@ -24,15 +24,5 @@ This is a work in progress.
 - [ ] Command-line interface  
 - [ ] Web app  
 
----
 
-## Requirements
-Dependencies are listed in `requirements.txt`.  
-To install them:
-
-```bash
-pip install -r requirements.txt
-```
-
----
 
