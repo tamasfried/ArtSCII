@@ -7,7 +7,7 @@ ArtSCII is a Python project that converts images into ASCII art. It takes an inp
 
 | Original Image | ASCII Output |
 |:-------------:|:-----------:|
-| <img src="Examples/CatExample.JPG" width="200"/> | <img src="Examples/CatExampleASCII.png" width="200"/> |
+| <img src="Examples/CatExample.JPG" width="400"/> | <img src="Examples/CatExampleASCII.png" width="400"/> |
 
 ## Project Goals
 
