@@ -56,7 +56,7 @@ if uploaded is not None:
     img = ImageOps.exif_transpose(img) # Correct orientation using EXIF data
 
     st.subheader("Preview")
-    st.image(img, use_container_width=True)
+    st.image(img, width = "stretch")
 
     # Convert to ASCII using shared core
     lines = to_ascii(img=img,
